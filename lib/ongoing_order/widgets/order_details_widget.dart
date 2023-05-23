@@ -23,6 +23,8 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Pickup Location',
