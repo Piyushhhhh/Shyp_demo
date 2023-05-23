@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/ongoing_order/widgets/booking_dialoge.dart';
 import 'package:shyp/values/colors.dart';
+import 'package:shyp/values/strings.dart';
 import 'package:shyp/values/text_styles.dart';
 
 class OrderDetailsActionButtons extends StatefulWidget {
@@ -34,7 +35,7 @@ class _OrderDetailsActionButtonsState extends State<OrderDetailsActionButtons> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Confim Load Booking',
+                    Strings.confirmLoadBooking,
                     style: TextStyles.semibold20
                         .copyWith(color: AppColors.background()),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/values/colors.dart';
+import 'package:shyp/values/strings.dart';
 import 'package:shyp/values/text_styles.dart';
 
 orderConfirmationBottomSheet1(BuildContext context) {
@@ -21,7 +22,7 @@ orderConfirmationBottomSheet1(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Conignor Details (Dispatch From)',
+                  Strings.conginorDisptchFrom,
                   style: TextStyles.regular16.textColor(),
                 ),
                 GestureDetector(
@@ -57,14 +58,14 @@ orderConfirmationBottomSheet1(BuildContext context) {
                     borderSide:
                         BorderSide(color: AppColors.primary(), width: 1.0),
                   ),
-                  hintText: 'Enter Loaction',
+                  hintText: Strings.enterLocation,
                   hintStyle: TextStyles.regular16.withFadeText()),
             ),
             const SizedBox(
               height: 20,
             ),
             Text(
-              '+ Add New Consignee Contact',
+              Strings.addNewConsignee,
               style: TextStyles.regular16.withNegative(),
             ),
             const SizedBox(
@@ -84,7 +85,7 @@ orderConfirmationBottomSheet1(BuildContext context) {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Next',
+                      Strings.next,
                       style: TextStyles.semibold20
                           .copyWith(color: AppColors.background()),
                     ),
@@ -125,7 +126,7 @@ orderConfirmationBottomSheet2(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Conignor Details (Ship To)',
+                  Strings.conginorShipTo,
                   style: TextStyles.regular16.textColor(),
                 ),
                 GestureDetector(
@@ -161,14 +162,14 @@ orderConfirmationBottomSheet2(BuildContext context) {
                     borderSide:
                         BorderSide(color: AppColors.primary(), width: 1.0),
                   ),
-                  hintText: 'Enter Loaction',
+                  hintText: Strings.enterLocation,
                   hintStyle: TextStyles.regular16.withFadeText()),
             ),
             const SizedBox(
               height: 20,
             ),
             Text(
-              '+ Add New Consignee Contact',
+              Strings.addNewConsignee,
               style: TextStyles.regular16.withNegative(),
             ),
             const SizedBox(
@@ -191,7 +192,7 @@ orderConfirmationBottomSheet2(BuildContext context) {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Back',
+                          Strings.back,
                           style: TextStyles.semibold20
                               .copyWith(color: AppColors.background()),
                         ),
@@ -214,7 +215,7 @@ orderConfirmationBottomSheet2(BuildContext context) {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Confirm',
+                          Strings.confirm,
                           style: TextStyles.semibold20
                               .copyWith(color: AppColors.background()),
                         ),

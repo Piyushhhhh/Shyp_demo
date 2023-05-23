@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/models/orders.dart';
-import 'package:shyp/ongoing_order/widgets/conform_buttom.dart';
+import 'package:shyp/ongoing_order/widgets/confirm_buttom.dart';
 import 'package:shyp/ongoing_order/widgets/load_price.dart';
 import 'package:shyp/ongoing_order/widgets/load_progress.dart';
 import 'package:shyp/ongoing_order/widgets/order_details_widget.dart';
