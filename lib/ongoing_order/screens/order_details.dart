@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/models/orders.dart';
-import 'package:shyp/ongoing/widgets/load_price.dart';
-import 'package:shyp/ongoing/widgets/load_progress.dart';
-import 'package:shyp/ongoing/widgets/order_details_widget.dart';
+import 'package:shyp/ongoing_order/widgets/conform_buttom.dart';
+import 'package:shyp/ongoing_order/widgets/load_price.dart';
+import 'package:shyp/ongoing_order/widgets/load_progress.dart';
+import 'package:shyp/ongoing_order/widgets/order_details_widget.dart';
 import 'package:shyp/values/colors.dart';
 
 class OrderDetails extends StatefulWidget {
@@ -17,6 +18,8 @@ class _OrderDetailsState extends State<OrderDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: const OrderDetailsActionButtons(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.background(),
@@ -38,6 +41,7 @@ class _OrderDetailsState extends State<OrderDetails> {
               height: 30,
             ),
             const LoadPrice(),
+            // const OrderDetailsActionButtons(),
           ],
         ),
       ),

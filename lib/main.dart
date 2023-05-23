@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shyp/ongoing/screens/ongoing_loads.dart';
+import 'package:shyp/ongoing_order/screens/ongoing_loads.dart';
 import 'package:shyp/values/strings.dart';
 
 void main() {

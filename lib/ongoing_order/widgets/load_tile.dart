@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/models/orders.dart';
-import 'package:shyp/ongoing/screens/order_details.dart';
+import 'package:shyp/ongoing_order/screens/order_details.dart';
 import 'package:shyp/shared/widget/seprater.dart';
 import 'package:shyp/values/colors.dart';
 import 'package:shyp/values/text_styles.dart';
