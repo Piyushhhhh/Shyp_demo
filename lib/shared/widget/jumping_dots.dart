@@ -4,16 +4,17 @@ class _JumpingDot extends AnimatedWidget {
   final Color? color;
   final double? fontSize;
 
-  _JumpingDot(
+  const _JumpingDot(
       {Key? key,
       required Animation<double> animation,
       this.color,
       this.fontSize})
       : super(key: key, listenable: animation);
 
+  @override
   Widget build(BuildContext context) {
     final Animation<double> animation = listenable as Animation<double>;
-    return Container(
+    return SizedBox(
       height: animation.value + fontSize!,
       child: Text(
         '.',
@@ -42,7 +43,8 @@ class JumpingDotsProgressIndicator extends StatefulWidget {
   final double endTweenValue = 8.0;
 
   /// Creates a jumping do progress indicator.
-  JumpingDotsProgressIndicator({
+  const JumpingDotsProgressIndicator({
+    super.key,
     this.numberOfDots = 3,
     this.fontSize = 10.0,
     this.color = Colors.black,
@@ -50,13 +52,16 @@ class JumpingDotsProgressIndicator extends StatefulWidget {
     this.milliseconds = 250,
   });
 
+  @override
+  // ignore: library_private_types_in_public_api
   _JumpingDotsProgressIndicatorState createState() =>
+      // ignore: no_logic_in_create_state
       _JumpingDotsProgressIndicatorState(
-        numberOfDots: this.numberOfDots,
-        fontSize: this.fontSize,
-        color: this.color,
-        dotSpacing: this.dotSpacing,
-        milliseconds: this.milliseconds,
+        numberOfDots: numberOfDots,
+        fontSize: fontSize,
+        color: color,
+        dotSpacing: dotSpacing,
+        milliseconds: milliseconds,
       );
 }
 
@@ -69,7 +74,7 @@ class _JumpingDotsProgressIndicatorState
   Color? color;
   List<AnimationController> controllers = <AnimationController>[];
   List<Animation<double>> animations = <Animation<double>>[];
-  List<Widget> _widgets = <Widget>[];
+  final List<Widget> _widgets = <Widget>[];
 
   _JumpingDotsProgressIndicatorState({
     this.numberOfDots,
@@ -79,6 +84,7 @@ class _JumpingDotsProgressIndicatorState
     this.milliseconds,
   });
 
+  @override
   initState() {
     super.initState();
     for (int i = 0; i < numberOfDots!; i++) {
@@ -114,8 +120,9 @@ class _JumpingDotsProgressIndicatorState
           .animate(controllers[index])
         ..addStatusListener(
           (AnimationStatus status) {
-            if (status == AnimationStatus.completed)
+            if (status == AnimationStatus.completed) {
               controllers[index].reverse();
+            }
             if (index == numberOfDots! - 1 &&
                 status == AnimationStatus.dismissed) {
               controllers[0].forward();
@@ -129,6 +136,7 @@ class _JumpingDotsProgressIndicatorState
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: fontSize! + (fontSize! * 0.5),
@@ -139,8 +147,11 @@ class _JumpingDotsProgressIndicatorState
     );
   }
 
+  @override
   dispose() {
-    for (int i = 0; i < numberOfDots!; i++) controllers[i].dispose();
+    for (int i = 0; i < numberOfDots!; i++) {
+      controllers[i].dispose();
+    }
     super.dispose();
   }
 }

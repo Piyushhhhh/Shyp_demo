@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/models/orders.dart';
+import 'package:shyp/values/strings.dart';
 import 'package:shyp/values/text_styles.dart';
 
 class OrderDeatilWidget extends StatefulWidget {
@@ -27,7 +28,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Pickup Location',
+                      Strings.pickUpLocation,
                       style: TextStyles.semibold14.withFadeText(),
                     ),
                     Text(
@@ -44,7 +45,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Drop Location',
+                      Strings.dropLocation,
                       style: TextStyles.semibold14.withFadeText(),
                     ),
                     Text(
@@ -66,7 +67,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Order Id:',
+              Strings.orderId,
               style: TextStyles.semibold14.withFadeText(),
             ),
             Text(
@@ -82,7 +83,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Pickup date:',
+              Strings.pickUpdate,
               style: TextStyles.semibold14.withFadeText(),
             ),
             Text(
@@ -98,7 +99,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Drop date: ',
+              Strings.dropDate,
               style: TextStyles.semibold14.withFadeText(),
             ),
             Text(
@@ -114,7 +115,7 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Quanity of Load:',
+              Strings.quantityOfLoads,
               style: TextStyles.semibold14.withFadeText(),
             ),
             Text(
@@ -130,11 +131,11 @@ class _OrderDeatilWidgetState extends State<OrderDeatilWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Material Type',
+              Strings.materialType,
               style: TextStyles.semibold14.withFadeText(),
             ),
             Text(
-              'TMT',
+              Strings.tmt,
               style: TextStyles.bold16.textColor(),
             ),
           ],

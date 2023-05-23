@@ -4,7 +4,7 @@ import 'package:shyp/values/strings.dart';
 import 'package:shyp/values/text_styles.dart';
 
 orderConfirmationBottomSheet1(BuildContext context) {
-  var _controller = TextEditingController();
+  var controller = TextEditingController();
   return showModalBottomSheet(
     isScrollControlled: true,
     shape: RoundedRectangleBorder(
@@ -40,7 +40,7 @@ orderConfirmationBottomSheet1(BuildContext context) {
               height: 20,
             ),
             TextField(
-              controller: _controller,
+              controller: controller,
               style: TextStyles.regular16.textColor(),
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -48,7 +48,7 @@ orderConfirmationBottomSheet1(BuildContext context) {
                         BorderSide(color: AppColors.primary(), width: 1.0),
                   ),
                   suffixIcon: IconButton(
-                    onPressed: _controller.clear,
+                    onPressed: controller.clear,
                     icon: Icon(
                       Icons.clear,
                       color: AppColors.fadeText(),
@@ -108,7 +108,7 @@ orderConfirmationBottomSheet1(BuildContext context) {
 }
 
 orderConfirmationBottomSheet2(BuildContext context) {
-  var _controller = TextEditingController();
+  var controller = TextEditingController();
   return showModalBottomSheet(
     isScrollControlled: true,
     shape: RoundedRectangleBorder(
@@ -144,7 +144,7 @@ orderConfirmationBottomSheet2(BuildContext context) {
               height: 20,
             ),
             TextField(
-              controller: _controller,
+              controller: controller,
               style: TextStyles.regular16.textColor(),
               decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
@@ -152,7 +152,7 @@ orderConfirmationBottomSheet2(BuildContext context) {
                         BorderSide(color: AppColors.primary(), width: 1.0),
                   ),
                   suffixIcon: IconButton(
-                    onPressed: _controller.clear,
+                    onPressed: controller.clear,
                     icon: Icon(
                       Icons.clear,
                       color: AppColors.fadeText(),

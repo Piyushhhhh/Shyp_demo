@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shyp/models/orders.dart';
 import 'package:shyp/ongoing_order/screens/order_details.dart';
+import 'package:shyp/shared/widget/jumping_dots.dart';
 import 'package:shyp/shared/widget/seprater.dart';
 import 'package:shyp/values/colors.dart';
 import 'package:shyp/values/text_styles.dart';
@@ -43,7 +44,7 @@ class _LoadTileState extends State<LoadTile> {
                   onTap: () {},
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
                       color: widget.order.pricePending == true
                           ? AppColors.primary().withOpacity(0.6)
                           : AppColors.accent().withOpacity(0.6),
@@ -53,15 +54,29 @@ class _LoadTileState extends State<LoadTile> {
                             : AppColors.accent(),
                       ),
                     ),
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: Center(
-                      child: Text(
-                        widget.order.pricePending == true ? 'Pending' : 'Done',
-                        style: TextStyles.regular12
-                            .copyWith(color: AppColors.text()),
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
+                      child: Row(
+                        children: [
+                          Text(
+                            widget.order.pricePending == true
+                                ? 'Pending'
+                                : 'Done',
+                            style: TextStyles.regular12
+                                .copyWith(color: AppColors.text()),
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                          widget.order.pricePending == true
+                              ? Padding(
+                                  padding: const EdgeInsets.only(left: 2.0),
+                                  child: JumpingDotsProgressIndicator(
+                                    color: AppColors.text(),
+                                  ),
+                                )
+                              : Container()
+                        ],
                       ),
                     ),
                   ),

@@ -18,7 +18,8 @@ class TabPicker extends StatefulWidget {
   final double? height;
   final bool activeElementShadow;
 
-  TabPicker({
+  const TabPicker({
+    super.key,
     required this.tabs,
     this.activeTabIndex = 0,
     this.onChange,
@@ -72,12 +73,13 @@ class _TabPickerState extends State<TabPicker> {
             ));
 
     var item = GestureDetector(
-      key: Key("tab_" + tab.text),
+      key: Key("tab_${tab.text}"),
       onTap: tab.disabled ? null : onTap,
       child: Container(
-        padding: widget.isFinite ? null : EdgeInsets.symmetric(horizontal: 16),
+        padding:
+            widget.isFinite ? null : const EdgeInsets.symmetric(horizontal: 16),
         margin: widget.itemMargin?.copyWith(top: 2, bottom: 2) ??
-            EdgeInsets.symmetric(vertical: 2),
+            const EdgeInsets.symmetric(vertical: 2),
         decoration: BoxDecoration(
           color: active
               ? (widget.selectedColor ?? AppColors.whiteBlack())
@@ -87,7 +89,7 @@ class _TabPickerState extends State<TabPicker> {
           boxShadow: [
             if (widget.activeElementShadow && active)
               BoxShadow(
-                offset: Offset(0, 4),
+                offset: const Offset(0, 4),
                 blurRadius: 2,
                 color: Colors.black.withOpacity(.25),
               ),
